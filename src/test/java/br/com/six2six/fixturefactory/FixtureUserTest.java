@@ -40,6 +40,9 @@ public class FixtureUserTest {
 		assertThat(user.getEmail(), containsString(user.getLogin()));
 	}
 
+	/**
+	 * This will also be useful to work with java 11 var statement
+	 */
 	@Test
 	public void shouldInferListType() {
 		validate(Arrays.asList(from(User.class).gimme("validFemaleUser")));
