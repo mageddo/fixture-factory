@@ -16,6 +16,7 @@ public class JavaVersion {
 
 	private final int major;
 	private final int minor;
+	private final double version;
 
 	public JavaVersion(String version) {
 		final Matcher matcher = JVM_VERSION_REGEX.matcher(version);
@@ -23,10 +24,11 @@ public class JavaVersion {
 		this.major = Integer.valueOf(matcher.group(1));
 		final String minorVersion = matcher.group(2);
 		this.minor = Integer.valueOf(StringUtils.isBlank(minorVersion) ? "0" : minorVersion);
+		this.version = Double.valueOf(String.format("%s.%s", major, minor));
 	}
 	
 	public boolean gte(JavaVersion version) {
-	    return this.major >= version.major && this.minor >= version.minor;
+		return Double.compare(this.version, version.version) > 0;
 	}
 	
 	public static JavaVersion current(){
