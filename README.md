@@ -195,6 +195,7 @@ Fixture-Factory was written by:
 with contributions from several authors, including:
 
 * [Nykolas Lima](https://github.com/nykolaslima)
+* [Elvis Souza](https://github.com/mageddo)
 
 ## License
 
